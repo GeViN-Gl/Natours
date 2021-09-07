@@ -1,0 +1,81 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  // padding: 25rem;
+  margin-top: -20vh;
+  padding-top: calc(20vh + 10rem);
+  // padding-bottom: 2.4rem;
+  padding-bottom: 25rem; //so adding padding up to section itself
+
+  &_row {
+    @include flex_row(0); //we sent 0 to mixin so we don have margin-bottom
+    justify-content: space-between;
+    padding: 0 $padding-left-right;
+    &--text-block,
+    &--figure-block {
+      flex-basis: 50%;
+    }
+  }
+}
+
+.section-features {
+  margin-top: -8rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  background-position: top;
+
+  transform: skewY(calc(-1 * #{$deg-skew}));
+
+  & > * {
+    //This will select ONLY direct childs to "unSkewY"
+    transform: skewY($deg-skew);
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 10rem;
+  margin-top: -10rem;
+}
+
+.section-stories {
+  padding: 4rem 0 8rem;
+
+  position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover; //Same as 100%
+  border-radius: $border-radius;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  ///TEST
+  height: 50rem;
+  ///TES END
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

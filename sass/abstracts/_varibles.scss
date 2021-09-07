@@ -1,0 +1,50 @@
+//COLORS
+
+$color-primary: #55c57a;
+$color-primary-light: #bff8b4;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-white: #ffffff;
+$color-black: #000;
+
+//fonts
+$font-size-x-small: 1.1rem; //$font-size-x-small: 1.2rem;
+$font-size-xx-small: 1.2rem; //$font-size-xx-small: 1.4rem;
+$font-size-small: 1.4rem; //$font-size-small: 1.6rem;
+$font-size-default: 1.6rem; //$font-size-default: 1.8rem;
+$font-size-medium: 1.8rem; //$font-size-medium: 2rem;
+$font-size-medium-p: 2em; //$font-size-medium-p: 2.4rem;
+$font-size-large: 2.4rem; //$font-size-large: 3rem;
+$font-size-large-x: 3rem; //$font-size-large-x: 3.6rem;
+//$font-size-huge-x: 4.2rem; //$font-size-huge: 4.2rem;
+//$font-size-huge-xx: 3.6rem; //$font-size-huge: 4.2rem;
+//$font-size-huge-xxx: 3.6rem; //$font-size-huge: 4.2rem;
+//$font-size-huge-xxxx: 3.6rem; //$font-size-huge: 4.2rem;
+
+//BORDERS
+
+$border-radius: 0.3rem;
+
+//GRID
+
+$grid-width: 120rem;
+$mrgn-bottom: 8rem;
+$flex-gap: 4rem;
+$padding-left-right: 4rem; //default padding from bleed
+
+// sections
+$deg-skew: 5deg; //screw angle for feature section
+$card-hight: 50rem; //card element height see _card.scss .card
+$deg-skew-story: 12deg; //skew angle for story section see _story.scss .story

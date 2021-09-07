@@ -1,0 +1,187 @@
+.card {
+  perspective: 120rem;
+  flex-basis: 30%;
+  position: relative;
+  height: $card-hight;
+  //I take out from normal flow __side and .cart coolape height,
+  // so i just write it here
+
+  &__side {
+    height: $card-hight; //and here
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(0.5turn);
+
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          darken($color-primary-light, 15%),
+          darken($color-primary-dark, 10%)
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(0.5turn);
+    //or i can start moving from -0.5 turn
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(1turn);
+    // and go to 0 turn here
+  }
+  //Front side style
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    //clip path eaten our border radiuses
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          darken($color-primary-light, 10%),
+          darken($color-primary-dark, 10%)
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-dark,
+          $color-tertiary-light
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-large-x;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 85%;
+    //in percentage of parent element to
+    // set heade 4 narrower
+  }
+
+  &__heading-span {
+    padding: 1rem 2rem;
+
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    //
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 3rem auto 0;
+
+      li {
+        text-align: center;
+        font-size: $font-size-small;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+  /////// BACK SIDE
+  &__cta {
+    padding: 5rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__price-box {
+    font-size: $font-size-default;
+    text-transform: uppercase;
+    color: lighten($color-secondary-light, 45%);
+  }
+
+  &__price-value {
+    font-size: $font-size-large-x * 2.5;
+    font-weight: 300;
+    color: $color-white;
+  }
+
+  &__price-btn {
+    margin-top: auto;
+  }
+}

@@ -1,0 +1,15 @@
+@mixin flex_row($margin-bottom: $mrgn-bottom, $gap: $flex-gap) {
+  display: flex;
+  margin-bottom: $margin-bottom;
+  gap: $gap;
+}
+
+// display: flex;
+// $hor-gap: 20px;
+// justify-content: space-between;
+
+//////////TEST
+
+@mixin test-gradient {
+  background-image: linear-gradient(to right, red, green);
+}

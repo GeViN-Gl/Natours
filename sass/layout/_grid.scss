@@ -1,0 +1,42 @@
+%containers-placeholder {
+  //i decide write at least one placeholder
+  max-width: $grid-width;
+  margin: 0 auto;
+}
+
+//all site is transferring from float layout to flex
+//so i need slightly different containers
+
+.row {
+  background-color: $color-grey-light-1;
+  @extend %containers-placeholder;
+  @include flex_row(0);
+}
+
+.container {
+  @extend %containers-placeholder;
+  @include flex_row;
+
+  justify-content: space-around;
+  align-items: flex-start;
+
+  padding: 0 $padding-left-right;
+}
+
+.container-center {
+  @extend %containers-placeholder;
+}
+
+.container-stories-flex {
+  @extend %containers-placeholder;
+  @include flex_row(8rem, 8rem);
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.radio-flex {
+  @include flex_row(0, 2rem);
+  padding-bottom: 2rem;
+  align-items: center;
+}

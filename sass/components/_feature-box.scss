@@ -1,0 +1,43 @@
+.feature-box {
+  background-color: rgba($color-white, 0.8); //mb change a little transparency
+  font-size: $font-size-small;
+
+  padding: 2.5rem;
+  // text-align: center;  //Better to center with flex all exept <p>
+  border-radius: $border-radius;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+
+  &__icon {
+    $icon-size: $font-size-large * 2;
+    width: $icon-size;
+    height: $icon-size;
+    // background-image: linear-gradient(
+    //   to right,
+    //   $color-primary,
+    //   $color-primary-dark
+    // );
+    color: $color-primary;
+    // -webkit-background-clip: text;
+    // background-clip: text;
+
+    margin-bottom: $icon-size / 2;
+  }
+
+  // &__text {
+  //   color: darken($color-grey-dark, 25%);
+  // }
+
+  &:hover > &__text {
+    color: darken($color-grey-dark, 25%);
+  }
+}

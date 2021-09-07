@@ -40,3 +40,9 @@
   padding-bottom: 2rem;
   align-items: center;
 }
+
+.container-footer {
+  @extend %containers-placeholder;
+  @include flex_row(0, 2rem);
+  justify-content: space-between;
+}

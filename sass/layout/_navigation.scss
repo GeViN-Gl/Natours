@@ -1,0 +1,108 @@
+$local-animation: cubic-bezier(0.22, 1, 0.36, 1);
+
+.navigation {
+  // height: 25rem;
+  // background-color: sandybrown;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-white;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 600;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+
+    // left: 100v;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    z-index: 500;
+    transition: transform 0.5s $local-animation;
+  }
+
+  &__nav {
+    height: 100vh;
+    // width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 550;
+
+    opacity: 0;
+    visibility: collapse;
+    //width: 0; //to animate slide from right
+    transition: opacity 0.5s $local-animation;
+  }
+
+  &__list {
+    @include absolute_center;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    display: inline-block;
+    &:link,
+    &:visited {
+      font-size: $font-size-large-x;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      // animation slide to left
+      // -- creating slider --
+      // --1-- create half-transparet gradient with 0-long transaction
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      // --2-- make it BIG
+      background-size: 250%;
+      transition: all 0.5s;
+    }
+
+    &:hover,
+    &:active {
+      //--3-- move it
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+  }
+  // funcionality
+  &__checkbox:checked ~ &__background {
+    transform: scale(90);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+
+  //icon
+}

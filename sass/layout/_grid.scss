@@ -46,3 +46,7 @@
   @include flex_row(0, 2rem);
   justify-content: space-between;
 }
+
+.container-pop-up {
+  @extend %containers-placeholder;
+}

@@ -18,6 +18,8 @@ $local-animation: cubic-bezier(0.22, 1, 0.36, 1);
     right: 6rem;
     z-index: 600;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+    text-align: center; //for button parts in __icon
+    cursor: pointer;
   }
 
   &__background {
@@ -39,7 +41,7 @@ $local-animation: cubic-bezier(0.22, 1, 0.36, 1);
 
   &__nav {
     height: 100vh;
-    // width: 100%;
+    width: 100%;
     position: fixed;
     top: 0;
     right: 0;
@@ -105,4 +107,58 @@ $local-animation: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   //icon
+
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: top 0.2s, transform 0.2s;
+    }
+
+    //or we can bount it to right and use trasform-origin
+    //to point whitch end of lie stays during transformation
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button > &__icon {
+    background-color: transparent;
+
+    &::before {
+      transform: rotate(135deg);
+      top: 0;
+    }
+
+    &::after {
+      transform: rotate(-135deg);
+      top: 0;
+    }
+  }
 }

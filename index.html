@@ -56,7 +56,9 @@
           <span class="heading-primary--sub">is where life happends</span>
         </h1>
 
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our tours</a
+        >
       </div>
     </header>
     <main>
@@ -165,7 +167,9 @@
 
       <section class="section-tours">
         <div class="u-center-text u-margin-bottom-big">
-          <h2 class="heading-secondary">Most popular tours</h2>
+          <h2 class="heading-secondary" id="section-tours">
+            Most popular tours
+          </h2>
         </div>
 
         <!-- //in float example there is a row with 3 columns, make them flex -->
@@ -194,7 +198,7 @@
                 <div class="card__price-box">Only</div>
                 <div class="card__price-value">$297</div>
                 <div class="card__price-btn">
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -223,7 +227,7 @@
                 <div class="card__price-box">Only</div>
                 <div class="card__price-value">$497</div>
                 <div class="card__price-btn">
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -252,7 +256,7 @@
                 <div class="card__price-box">Only</div>
                 <div class="card__price-value">$897</div>
                 <div class="card__price-btn">
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -426,7 +430,7 @@
     </footer>
 
     <!-- popup z-index 10-00 -->
-    <aside class="popup">
+    <aside class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
           <img src="img/nat-8.jpg" alt="River tour photo" class="popup__img" />
@@ -437,6 +441,7 @@
           />
         </div>
         <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
           <h2 class="heading-secondary u-margin-bottom-small">
             Start booking now
           </h2>

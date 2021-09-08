@@ -1,3 +1,21 @@
+/*
+0-600     Phone
+600-900   Tablet portrait
+900-1200  Tablet landscape
+1200-1920 Desktop //wea are here
+
+
+1920+     envy
+
+$breakpoint arguement choises:
+- phone
+- tab-port
+- tab-land
+- big-desk
+
+
+1en = 16px
+*/
 @keyframes moveinleft {
   0% {
     opacity: 0;
@@ -35,17 +53,29 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #ffffff;
@@ -54,22 +84,26 @@ body {
   margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
-    font-size: calc(3 * 1.8rem);
+    font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
-    animation: moveinleft 1s ease-out;
-    /* animation-name: moveinleft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; */
-    /* animation-delay: 3s; 
-    animation-iteration-count: 3;
-    */ }
+    animation: moveinleft 1s ease-out; }
+    @media (max-width: 56.25em) {
+      .heading-primary--main {
+        letter-spacing: 2rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 4.8rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveinright 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3rem;
@@ -82,6 +116,9 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.4rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -320,11 +357,18 @@ body {
   padding: 2.5rem;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  flex-basis: 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.3s; }
+  @media (max-width: 67.5em) {
+    .feature-box:last-child {
+      grid-column: 2; } }
+  @media (max-width: 56.25em) {
+    .feature-box:last-child {
+      grid-column: initial; } }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
   .feature-box__icon {
@@ -533,8 +577,20 @@ body {
   margin-bottom: 8rem;
   gap: 4rem;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   padding: 0 4rem; }
+  @media (max-width: 67.5em) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 56.25em) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 15vw; } }
+  @media (max-width: 37.5em) {
+    .container {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0 25vw; } }
 
 .container-stories-flex {
   display: flex;
@@ -732,8 +788,17 @@ body {
     gap: 4rem;
     justify-content: space-between;
     padding: 0 4rem; }
+    @media (max-width: 37.5em) {
+      .section-about_row {
+        flex-wrap: wrap;
+        gap: 6rem; }
+        .section-about_row--figure-block {
+          height: 40vh; } }
     .section-about_row--text-block, .section-about_row--figure-block {
       flex-basis: 50%; }
+      @media (max-width: 37.5em) {
+        .section-about_row--text-block, .section-about_row--figure-block {
+          flex-basis: 100%; } }
 
 .section-features {
   margin-top: -8rem;
@@ -742,6 +807,13 @@ body {
   background-size: cover;
   background-position: top;
   transform: skewY(calc(-1 * 5deg)); }
+  @media (max-width: 67.5em) {
+    .section-features {
+      padding-bottom: 10rem; } }
+  @media (max-width: 37.5em) {
+    .section-features {
+      padding-top: 8rem;
+      padding-bottom: 8rem; } }
   .section-features > * {
     transform: skewY(5deg); }
 

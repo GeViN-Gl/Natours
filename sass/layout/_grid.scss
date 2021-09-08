@@ -11,6 +11,8 @@
   background-color: $color-grey-light-1;
   @extend %containers-placeholder;
   @include flex_row(0);
+
+  //this row in _home.scss section-about_row
 }
 
 .container {
@@ -18,9 +20,22 @@
   @include flex_row;
 
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
 
   padding: 0 $padding-left-right;
+
+  @include respond(w-1100) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 15vw;
+  }
+  @include respond(phone) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 25vw;
+  }
 }
 
 .container-center {

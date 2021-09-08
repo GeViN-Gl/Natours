@@ -10,9 +10,21 @@
     @include flex_row(0); //we sent 0 to mixin so we don have margin-bottom
     justify-content: space-between;
     padding: 0 $padding-left-right;
+
+    @include respond(phone) {
+      flex-wrap: wrap;
+      gap: 6rem;
+      &--figure-block {
+        height: 40vh;
+      }
+    }
+
     &--text-block,
     &--figure-block {
       flex-basis: 50%;
+      @include respond(phone) {
+        flex-basis: 100%;
+      }
     }
   }
 }
@@ -20,6 +32,14 @@
 .section-features {
   margin-top: -8rem;
   padding: 20rem 0;
+  @include respond(w-1100) {
+    padding-bottom: 10rem;
+  }
+  @include respond(phone) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),

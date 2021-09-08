@@ -3,9 +3,24 @@
   font-size: $font-size-small;
 
   padding: 2.5rem;
+
   // text-align: center;  //Better to center with flex all exept <p>
   border-radius: $border-radius;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  flex-basis: 22%;
+
+  @include respond(w-1100) {
+    &:last-child {
+      grid-column: 2;
+    }
+  }
+
+  @include respond(tab-port) {
+    &:last-child {
+      grid-column: initial;
+    }
+  }
 
   display: flex;
   flex-direction: column;
